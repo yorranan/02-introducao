@@ -6,9 +6,9 @@ export default class Venda
     private _codigo: number
     private _data: number
     private _cliente: Cliente
-    private _produtos: Produto
+    private _produtos: Array<Produto>
 
-    constructor (codigo: number, data: number, cliente: Cliente, produto: Produto)
+    constructor (codigo: number, data: number, cliente: Cliente, produto: Array<Produto>)
     {
         this._codigo = codigo
         this._data = data
@@ -28,7 +28,7 @@ export default class Venda
     {
         return this._cliente
     }
-    get produtos(): Produto
+    get produtos(): Array<Produto>
     {
         return this._produtos
     }
@@ -45,15 +45,16 @@ export default class Venda
     {
         this._cliente = cliente
     }
-    set produtos(produto: Produto)
+    
+    set produtos(produto: Array<Produto>)
     {
         this._produtos = produto
     }
-
+    
     calcularTotal(): number
     {
         let total : number
-        total = 0.00
+        total = 
         return total
     }
 

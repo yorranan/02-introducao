@@ -1,10 +1,15 @@
+enum Tipo{
+    CELULAR,
+    FIXO
+}
+
 export default class Telefone
 {
     private _ddd: string
     private _numero: number
-    private _tipo: string
+    private _tipo: Tipo
 
-    constructor (ddd: string, numero: number, tipo: string)
+    constructor (ddd: string, numero: number, tipo: Tipo)
     {
         this._ddd = ddd
         this._numero = numero
@@ -19,7 +24,7 @@ export default class Telefone
     {
         return this._numero
     }
-    get tipo(): string
+    get tipo(): Tipo
     {
         return this._tipo
     }
@@ -32,7 +37,7 @@ export default class Telefone
     {
         this._numero = numero
     }
-    set tipo(tipo: string)
+    set tipo(tipo: Tipo)
     {
         this._tipo = tipo
     }

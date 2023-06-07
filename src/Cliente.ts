@@ -1,3 +1,8 @@
+enum Sexo{
+    MASCULINO,
+    FEMININO
+}
+
 import Endereco from "./Endereco"
 import Telefone from "./Telefone"
 
@@ -6,18 +11,12 @@ export default class Cliente
     private _nome: string
     private _cpf: string
     private _dataNascimento: number
-    private _sexo: string
+    private _sexo: Sexo
     private _endereco: Endereco
-    private _telefones: Telefone
+    private _telefones: Array<Telefone>
 
-    /* Vai ser sexo ou genero?
-    enum Sexo{
-        MASCULINO = "MASCULINO",
-        FEMININO = "FEMININO"
-    }
-    */
-
-    constructor(nome: string, cpf: string, dataNascimento: number, sexo: string, endereco: Endereco, telefone: Telefone)
+ 
+    constructor(nome: string, cpf: string, dataNascimento: number, sexo: Sexo, endereco: Endereco, telefone: Array<Telefone>)
     {
         this._nome = nome
         this._cpf = cpf
@@ -39,7 +38,7 @@ export default class Cliente
     {
         return this._dataNascimento
     }
-    get sexo(): string
+    get sexo(): Sexo
     {
         return this._sexo
     }
@@ -47,11 +46,11 @@ export default class Cliente
     {
         return this._endereco
     }
-    get telefones(): Telefone
+    get telefones(): Array<Telefone>
     {
         return this._telefones 
     }
-
+    
     set nome(nome: string)
     {
         this._nome = nome
@@ -64,7 +63,7 @@ export default class Cliente
     {
         this._dataNascimento = dataNascimento
     }
-    set sexo(sexo: string)
+    set sexo(sexo: Sexo)
     {  
         this._sexo = sexo
     }
@@ -72,8 +71,10 @@ export default class Cliente
     {
         this._endereco = endereco
     }
-    set telefones(telefone: Telefone)
+    
+    set telefones(telefones: Array<Telefone>)
     {
-        this._telefones = telefone
+        this._telefones = telefones
     }
+
 }
