@@ -14,5 +14,20 @@ let produto4: Produto = new Produto(3, "Desodorante", 10.99)
 let cliente1: Cliente = new Cliente("Aline", "12345678900", 22042004, 1, endereco, [telefone1, telefone2])
 let venda1: Venda = new Venda(0, 662023, cliente1, [produto1, produto2, produto1, produto3, produto4])
 
-console.log("Teste")
+console.log("--- RESULTADO DA BUSCA ---")
 console.log("Cliente: " + cliente1.nome)
+console.log("Produtos comprados:")
+
+let i: number = 0
+venda1.produtos.forEach((produto) => {
+    i++
+    console.log(i + " - " + produto.descricao + " " + produto.valor)
+})
+
+i = 0
+cliente1.telefones.forEach((telefone) => {
+    i++
+    console.log("Telefone " + i + ": " + "(" + telefone.ddd + ") " + telefone.numero)
+})
+let total: number = venda1.calcularTotal(venda1.produtos)
+console.log("Total da compra = " + total )

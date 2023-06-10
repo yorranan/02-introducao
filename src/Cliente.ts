@@ -13,10 +13,10 @@ export default class Cliente
     private _dataNascimento: number
     private _sexo: Sexo
     private _endereco: Endereco
-    private _telefones: Array<Telefone>
+    private _telefones: Telefone[]
 
  
-    constructor(nome: string, cpf: string, dataNascimento: number, sexo: Sexo, endereco: Endereco, telefone: Array<Telefone>)
+    constructor(nome: string, cpf: string, dataNascimento: number, sexo: Sexo, endereco: Endereco, telefone: Telefone[])
     {
         this._nome = nome
         this._cpf = cpf
@@ -46,7 +46,7 @@ export default class Cliente
     {
         return this._endereco
     }
-    get telefones(): Array<Telefone>
+    get telefones(): Telefone[]
     {
         return this._telefones 
     }
@@ -72,7 +72,7 @@ export default class Cliente
         this._endereco = endereco
     }
     
-    set telefones(telefones: Array<Telefone>)
+    set telefones(telefones: Telefone[])
     {
         this._telefones = telefones
     }
